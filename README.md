@@ -1,2 +1,2 @@
-# innfprog26_LMG
+# innfprog24\_LMG
 
