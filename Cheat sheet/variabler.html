@@ -9,14 +9,21 @@
     <h1>Variabler i javascript</h1>
     <p>Hei, <span id="name"></span>(<span id="age">?</span> år)</p>
 
+    <h2>Handlekurv</h2>
+    <ul>
+        <li>Antall Produkter: <span id="quantitySpan">0</span></li>
+        <li>Pris: <span id="priceSpan">0</span> Kroner</li>
+        <li>Sum: <span id="totalSpan">0</span> Kroner</li>
+    </ul>
+
     <script>   
         //deklarer variabler 
         /*
          *const: Deklarer en konstant verdi som ikke skal endres
          *let:   Deklarere en verdi som kan endres
          */
-        const firstname = "Lars-Martin";
-        console.log(firstname);
+        const firstname = "Lars-Martin"
+        console.log(firstname)
         const lastname = "Gunnersen"
         // skriv ut firstname-verdi til HTML-element med id name:  
         // vi bruker konkatinering, altså slår sammen variabler og tekst, for å skrive ut fornavn + etternavn:
@@ -26,6 +33,16 @@
         const birthYear = 1994
         let age = 2026 - birthYear
         document.getElementById("age").innerHTML = age
+
+        //forbereder handlekurv
+        let quantity = 3
+        const price = 1000
+        let total = quantity * price
+
+        document.getElementById("quantitySpan").innerHTML = quantity 
+        document.getElementById("priceSpan").innerHTML = price
+        document.getElementById("totalSpan").innerHTML = total
+
     </script>
 </body>
 </html>
