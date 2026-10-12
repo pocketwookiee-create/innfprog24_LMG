@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function opg 2</title>
+</head>
+<body>
+    <script>
+        const people = ["Marius", "Tore", "Susanne", "Monica", "Arne", "Zoltan", "Beate"]
+ 
+        function printNames(array){
+            //sorter array
+            array.sort()
+            //lage et ul-element
+            const ul = document.createElement("ul")
+            //fylle ul-listen med listeelementer med navn
+            array.map( person => {
+                //lage en <li> (listeelement)
+                    const li = document.createElement("li")
+                //få navnet i "person"-parameteren in i <li>
+                    li.innerHTML = person
+                //Legge <li>-elementet inn i <ul>
+                    ul.appendChild(li)
+
+                
+            })
+            //testutskrift.
+            console.log(ul)
+            //legge <ul>- listen på nettsiden
+            document.body.appendChild(ul)
+        }
+        //kjøre funksjon
+        printNames(people)
+    </script>
+</body>
+</html>

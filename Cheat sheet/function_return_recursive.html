@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat sheet functions with return and recursion</title>
+</head>
+<body>
+    <script>
+        /*
+        *function calculator
+        * number1, number 2: tall
+        * operator: kan ha en av føgende verdier: "add", "subtract", "multiply", "divide"
+        */
+
+        function calculator(number1, number2, operator){
+            if(operator === "add"){
+               return number1 + number2
+            }
+            if(operator === "subtract"){
+               return number1 - number2
+            }
+            if(operator === "multiply"){
+                return number1 * number2
+            }
+            if (operator === "divde"){
+                return number1 / number2
+            }
+            //Hvis vi mangler operator, eller funksjonene ikke kan kjøre, avslutt den:
+            return
+        }
+
+        const result = calculator(2, 3, "add")
+
+        //hvis vi skal skrive resultatet fra calculator til kode, må vi legge det i et HTML-element
+        const p = document.createElement("p")
+        p.innerHTML = result
+        document.body.appendChild(p)
+
+        //testutskrift til konsollen med et funksjonskall
+        console.log(calculator ( 3, 3, "add"))
+        console.log(calculator ( 3, 3, "subtract"))
+        console.log(calculator ( 3, 3, "multiply"))  
+        console.log(calculator ( 88, 7, "divde"))
+
+        //rekursive funkjson, nedtelling
+        function countdown(from){
+            if(from > 0){
+                console.log(from)
+                from--
+                countdown(from)
+            }   else{
+                return
+            }
+        }
+        countdown(10)
+
+        //legg samme alle tall i en array
+        const tall = [1, 5, 66, 6, 42, 333, 54, 7]
+
+        function addAll(array){
+            let sum = 0
+
+            array.map( n =>{
+                sum += n
+            })
+
+            const nump = document.createElement("p")
+            nump.innerHTML = sum
+            document.body.appendChild(nump)
+        }
+        addAll(tall)
+    </script>
+</body>
+</html>
